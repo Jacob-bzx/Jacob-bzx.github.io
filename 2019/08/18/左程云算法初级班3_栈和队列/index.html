@@ -55,28 +55,36 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="例题1用数组实现栈 123456789101112131415161718192021222324252627282930313233public static class ArrayStack &amp;#123;	private Integer[] arr;	private Integer size;	public ArrayStack(int initSize) &amp;#123;		if (initSi">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/左程云算法初级班3_栈和队列/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="例题1用数组实现栈 123456789101112131415161718192021222324252627282930313233public static class ArrayStack &amp;#123;	private Integer[] arr;	private Integer size;	public ArrayStack(int initSize) &amp;#123;		if (initSi">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/algorithm/3/1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/algorithm/3/2.jpg">
+<meta property="og:updated_time" content="2019-08-18T15:03:46.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:title" content="3">
+<meta name="twitter:description" content="例题1用数组实现栈 123456789101112131415161718192021222324252627282930313233public static class ArrayStack &amp;#123;	private Integer[] arr;	private Integer size;	public ArrayStack(int initSize) &amp;#123;		if (initSi">
+<meta name="twitter:image" content="http://yoursite.com/images/algorithm/3/1.jpg">
+  <link rel="canonical" href="http://yoursite.com/2019/08/18/左程云算法初级班3_栈和队列/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Hexo</title>
+  <title>3 | Hexo</title>
   
 
 
@@ -180,10 +188,11 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
+          <div id="content" class="content page-post-detail">
             
-  <section id="posts" class="posts-expand">
-      
+
+  <div id="posts" class="posts-expand">
+    
 
   <article class="post" itemscope itemtype="http://schema.org/Article">
   
@@ -202,9 +211,8 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/18/左程云算法初级班3_栈和队列/" class="post-title-link" itemprop="url">3</a>
+        <h1 class="post-title" itemprop="name headline">3
+
           
         </h1>
 
@@ -238,7 +246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h2><p><strong>用数组实现栈</strong></p>
+        <h2 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h2><p><strong>用数组实现栈</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayStack</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Integer[] arr;</span><br><span class="line">	<span class="keyword">private</span> Integer size;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ArrayStack</span><span class="params">(<span class="keyword">int</span> initSize)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (initSize &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The init size is less than 0"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		arr = <span class="keyword">new</span> Integer[initSize];</span><br><span class="line">		size = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> arr[size - <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == arr.length) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ArrayIndexOutOfBoundsException(<span class="string">"The queue is full"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		arr[size++] = obj;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ArrayIndexOutOfBoundsException(<span class="string">"The queue is empty"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> arr[--size];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h2><p><strong>用数组实现队列</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayQueue</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Integer[] arr;</span><br><span class="line">	<span class="keyword">private</span> Integer size;</span><br><span class="line">	<span class="keyword">private</span> Integer first;</span><br><span class="line">	<span class="keyword">private</span> Integer last;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ArrayQueue</span><span class="params">(<span class="keyword">int</span> initSize)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (initSize &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The init size is less than 0"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		arr = <span class="keyword">new</span> Integer[initSize];</span><br><span class="line">		size = <span class="number">0</span>;</span><br><span class="line">		first = <span class="number">0</span>;</span><br><span class="line">		last = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> arr[first];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == arr.length) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ArrayIndexOutOfBoundsException(<span class="string">"The queue is full"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		size++;</span><br><span class="line">		arr[last] = obj;</span><br><span class="line">		last = last == arr.length - <span class="number">1</span> ? <span class="number">0</span> : last + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">poll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ArrayIndexOutOfBoundsException(<span class="string">"The queue is empty"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		size--;</span><br><span class="line">		<span class="keyword">int</span> tmp = first;</span><br><span class="line">		first = first == arr.length - <span class="number">1</span> ? <span class="number">0</span> : first + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> arr[tmp];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -283,226 +291,52 @@
 <p>思路：用一个变量统计哈希表里数据总数。并在删除一个元素时，把它与最后一个元素交换，再进行删除。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Pool</span>&lt;<span class="title">K</span>&gt; </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> HashMap&lt;K, Integer&gt; keyIndexMap;</span><br><span class="line">	<span class="keyword">private</span> HashMap&lt;Integer, K&gt; indexKeyMap;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Pool</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.keyIndexMap = <span class="keyword">new</span> HashMap&lt;K, Integer&gt;();</span><br><span class="line">		<span class="keyword">this</span>.indexKeyMap = <span class="keyword">new</span> HashMap&lt;Integer, K&gt;();</span><br><span class="line">		<span class="keyword">this</span>.size = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(K key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="keyword">this</span>.keyIndexMap.containsKey(key)) &#123;</span><br><span class="line">			<span class="keyword">this</span>.keyIndexMap.put(key, <span class="keyword">this</span>.size);</span><br><span class="line">			<span class="keyword">this</span>.indexKeyMap.put(<span class="keyword">this</span>.size++, key);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(K key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.keyIndexMap.containsKey(key)) &#123;</span><br><span class="line">			<span class="keyword">int</span> deleteIndex = <span class="keyword">this</span>.keyIndexMap.get(key);</span><br><span class="line">			<span class="keyword">int</span> lastIndex = --<span class="keyword">this</span>.size;</span><br><span class="line">			K lastKey = <span class="keyword">this</span>.indexKeyMap.get(lastIndex);</span><br><span class="line">			<span class="keyword">this</span>.keyIndexMap.put(lastKey, deleteIndex);</span><br><span class="line">			<span class="keyword">this</span>.indexKeyMap.put(deleteIndex, lastKey);</span><br><span class="line">			<span class="keyword">this</span>.keyIndexMap.remove(key);</span><br><span class="line">			<span class="keyword">this</span>.indexKeyMap.remove(lastIndex);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> K <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.size == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> randomIndex = (<span class="keyword">int</span>) (Math.random() * <span class="keyword">this</span>.size);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.indexKeyMap.get(randomIndex);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/15/左程云算法初级班1_排序算法/" rel="next" title="基本的排序算法">
+                  <i class="fa fa-chevron-left"></i> 基本的排序算法
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-      
-
-  <article class="post" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/左程云算法初级班1_排序算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zixuan Bai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/15/左程云算法初级班1_排序算法/" class="post-title-link" itemprop="url">基本的排序算法</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-15 21:29:01" itemprop="dateCreated datePublished" datetime="2019-08-15T21:29:01+08:00">2019-08-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 18:07:42" itemprop="dateModified" datetime="2019-08-18T18:07:42+08:00">2019-08-18</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基本的排序算法"><a href="#基本的排序算法" class="headerlink" title="基本的排序算法"></a>基本的排序算法</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> e = arr.length - <span class="number">1</span>; e &gt; <span class="number">0</span>; e--) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; e; i++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (arr[i] &gt; arr[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                   swap(arr, i, i + <span class="number">1</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度$O(N^2)$</p>
-<p>空间复杂度$O(1)$ </p>
-<p>稳定排序</p>
-<p><strong>代码说明：</strong></p>
-<ul>
-<li><p>变量$e$代表的是每次冒泡后的终止位置。</p>
-</li>
-<li><p>每次冒泡变量$i$从0开始，到$e-1$的位置。</p>
-</li>
-</ul>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; arr[j + <span class="number">1</span>]; j--) &#123;</span><br><span class="line">            swap(arr, j, j + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度$O(N^2)$</p>
-<p>空间复杂度$O(1)$ </p>
-<p>稳定排序</p>
-<p><strong>代码说明：</strong></p>
-<ul>
-<li>变量$i$代表的新进来的数的位置，第一个数不用排序，故从1开始。</li>
-<li>插入时，前面的数组已经是有序的了。把新的数从末尾依次进行比较即可。</li>
-</ul>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            minIndex = arr[j] &lt; arr[minIndex] ? j : minIndex;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, i, minIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度$O(N^2)$</p>
-<p>空间复杂度$O(1)$ </p>
-<p><strong>不稳定排序</strong></p>
-<p><img src="images/algorithm/1/1.png" alt="不稳定实例"></p>
-<p><strong>代码说明：</strong></p>
-<ul>
-<li>变量$i$代表该轮选择后，最后要放的数的位置。并设置第一个数为默认最小值。</li>
-<li>变量$j$从索引$i+1$遍历到数组末尾。</li>
-<li>每轮选择出最小的数后与初始位于$i$位置的数进行交换。</li>
-</ul>
-<h2 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h2><p>递归表达式为$T(n)=aT(\frac{n}{b})+O(N^d)$的前提下</p>
-<ul>
-<li>$log_b^a&gt;d$ 时，复杂度为 $O(N^{log_b^a})$</li>
-<li>$log_b^a&lt;d$ 时，复杂度为 $O(N^d)$</li>
-<li>$log_b^a=d$ 时，复杂度为 $O(N^d \cdot logN)$</li>
-</ul>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       mergeSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">int</span> mid = l + ((r - l) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">       mergeSort(arr, l, mid);</span><br><span class="line">       mergeSort(arr, mid + <span class="number">1</span>, r);</span><br><span class="line">       merge(arr, l, mid, r);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> m, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] help = <span class="keyword">new</span> <span class="keyword">int</span>[r - l + <span class="number">1</span>];</span><br><span class="line">       <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> p1 = l;</span><br><span class="line">       <span class="keyword">int</span> p2 = m + <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">while</span> (p1 &lt;= m &amp;&amp; p2 &lt;= r) &#123;</span><br><span class="line">           help[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (p1 &lt;= m) &#123;</span><br><span class="line">           help[i++] = arr[p1++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">while</span> (p2 &lt;= r) &#123;</span><br><span class="line">           help[i++] = arr[p2++];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; help.length; i++) &#123;</span><br><span class="line">           arr[l + i] = help[i];</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度$O(NlogN)$</p>
-<p>空间复杂度$O(N)$</p>
-<p>归并排序可以拓展用于<strong>逆序对</strong>、<strong>小和问题</strong>的解答。</p>
-<p>原地归并排序虽然空间复杂度为$O(1)$，但时间复杂度是$O(N^2)$</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="经典快排"><a href="#经典快排" class="headerlink" title="经典快排"></a>经典快排</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">		<span class="keyword">int</span> p = partition(arr, l, r);</span><br><span class="line">		quickSort(arr, l, p- <span class="number">1</span>);</span><br><span class="line">		quickSort(arr, p + <span class="number">1</span>, r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> less = l-<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=l;i&lt;=r;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i]&lt;=arr[r])&#123;</span><br><span class="line">			swap(arr,++less,i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> less;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码分析：</p>
-<ul>
-<li>partition中返回的less一定不会越界，因为在$i=r$时必定less会增加。</li>
-</ul>
-<h3 id="随机快排"><a href="#随机快排" class="headerlink" title="随机快排"></a>随机快排</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	quickSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">		swap(arr, l + (<span class="keyword">int</span>) (Math.random() * (r - l + <span class="number">1</span>)), r);</span><br><span class="line">		<span class="keyword">int</span>[] p = partition(arr, l, r);</span><br><span class="line">		quickSort(arr, l, p[<span class="number">0</span>] - <span class="number">1</span>);</span><br><span class="line">		quickSort(arr, p[<span class="number">1</span>] + <span class="number">1</span>, r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123;</span><br><span class="line">	<span class="keyword">int</span> less = l - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> more = r;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; more) &#123;</span><br><span class="line">		<span class="keyword">if</span> (arr[l] &lt; arr[r]) &#123;</span><br><span class="line">			swap(arr, ++less, l++);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[l] &gt; arr[r]) &#123;</span><br><span class="line">			swap(arr, --more, l);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			l++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	swap(arr, more, r);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; less + <span class="number">1</span>, more &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码分析：</p>
-<ul>
-<li><p>先随机选择一个数与最后一个数交换</p>
-</li>
-<li><p>partition返回的是等于数组中等于目标值的最左、最右索引</p>
-</li>
-</ul>
-<p>时间复杂度</p>
-<ul>
-<li><p>长期期望$O(NlogN)$，且常数项较小，工程中常用快排。</p>
-</li>
-<li><p>最坏情况$O(N^2)$</p>
-</li>
-</ul>
-<p>空间复杂度来源于记录断点的深度（最深一次的递归后可以释放），最好$O(logN)$，最坏$O(N)$</p>
-<p><img src="images/algorithm/1/2.png" alt="不稳定示例"></p>
-<p>快排一般是不稳定，源于partition的不稳定。论文01 stable sort可以满足稳定性。</p>
-<p><strong>拓展：</strong></p>
-<ul>
-<li>一个数组，奇数放左边，偶数放右边。空间$O(1)$，时间$O(NlogN)$。并且保持稳定？</li>
-</ul>
-<p>实际和快排的partition算法一样，不可能实现。</p>
-<ul>
-<li>荷兰国旗问题 </li>
-</ul>
-<p>思路和随机快排一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> p) &#123;</span><br><span class="line">	<span class="keyword">int</span> less = l - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> more = r + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; more) &#123;</span><br><span class="line">		<span class="keyword">if</span> (arr[l] &lt; p) &#123;</span><br><span class="line">			swap(arr, ++less, l++);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[l] &gt; p) &#123;</span><br><span class="line">			swap(arr, --more, l);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			l++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; less + <span class="number">1</span>, more - <span class="number">1</span> &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>堆是完全二叉树.</p>
-<p>堆用数组存储，数组索引从0开始[其实我觉得从1开始更方便]。若当前节点索引为$i$。则查找父节点的索引为$(i-1)/2$,左右子节点的索引分别为$2i+1$和$2i+2$.</p>
-<h3 id="先建堆再排序"><a href="#先建堆再排序" class="headerlink" title="先建堆再排序"></a>先建堆再排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		heapInsert(arr, i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> size = arr.length;</span><br><span class="line">	swap(arr, <span class="number">0</span>, --size);</span><br><span class="line">	<span class="keyword">while</span> (size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		heapify(arr, <span class="number">0</span>, size);</span><br><span class="line">		swap(arr, <span class="number">0</span>, --size);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 最后一个数插入到之前的堆中</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapInsert</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (arr[index] &gt; arr[(index - <span class="number">1</span>) / <span class="number">2</span>]) &#123;</span><br><span class="line">		swap(arr, index, (index - <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">		index = (index - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除最后最大值后，把最大值与堆中最后的数交换，并调整堆</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> index, <span class="keyword">int</span> size)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> left = index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (left &lt; size) &#123;</span><br><span class="line">		<span class="keyword">int</span> largest = left + <span class="number">1</span> &lt; size &amp;&amp; arr[left + <span class="number">1</span>] &gt; arr[left] ? left + <span class="number">1</span> : left;</span><br><span class="line">		largest = arr[largest] &gt; arr[index] ? largest : index;</span><br><span class="line">		<span class="keyword">if</span> (largest == index) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		swap(arr, largest, index);</span><br><span class="line">		index = largest;</span><br><span class="line">		left = index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>建堆的时间复杂度分析</p>
-<ul>
-<li>将第$N$个节点插入到堆中，复杂度为$O(logN)$</li>
-<li>故总的时间复杂度为<script type="math/tex">O(log1+log2+\cdots+logN)=O(N)</script></li>
-</ul>
-<p>堆排序的时间复杂度$O(NlogN)$，空间复杂度$O(1)$</p>
-<p>堆排序不稳定，且常数项大，故工程中不常用。</p>
-<h2 id="综合排序"><a href="#综合排序" class="headerlink" title="综合排序"></a>综合排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(arr)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>size&lt;60时采用插入排序，原因是常数项低</li>
-<li>size&gt;60时<ul>
-<li>基础类型 <strong>快排</strong></li>
-<li>自定义对象 <strong>归并排序</strong> 原因：<strong>稳定性</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><p>以上的排序都是基于比较的排序，可证明基于比较的排序时间复杂度最小都是$O(N!)$ ~ $O(NlogN)$ 级别。桶排序不是基于比较的排序，时间复杂度可达$O(N)$。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bucketSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		max = Math.max(max, arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span>[] bucket = <span class="keyword">new</span> <span class="keyword">int</span>[max + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		bucket[arr[i]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; bucket.length; j++) &#123;</span><br><span class="line">		<span class="keyword">while</span> (bucket[j]-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			arr[i++] = j;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>时间复杂度：$O(N)$</p>
-<p>空间复杂度：$O(N)$</p>
-<p><strong>例题：</strong>给定一个无序数组，在$O(N)$的时间复杂度下求解对应有序数组中相邻两数的最大值。注：数组最大值和最小值差很大，不能对其中的每个数都建桶。</p>
-<p><strong>思路：</strong>关键点在于决定桶的数量是多少。例如0为最小数，99为最大数，共9个数，则分10个桶，必有一个桶是空的。此时最大差值一定在两个不同桶之间。因为桶内最大差为10，由于空桶存在，至少有一对差值大于10的数。</p>
-<p><img src="images/algorithm/1/3.jpg" alt="桶示例"></p>
-<p>具体代码如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxGap</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> len = nums.length;</span><br><span class="line">	<span class="keyword">int</span> min = Integer.MAX_VALUE;</span><br><span class="line">	<span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		min = Math.min(min, nums[i]);</span><br><span class="line">		max = Math.max(max, nums[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (min == max) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">boolean</span>[] hasNum = <span class="keyword">new</span> <span class="keyword">boolean</span>[len + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span>[] maxs = <span class="keyword">new</span> <span class="keyword">int</span>[len + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span>[] mins = <span class="keyword">new</span> <span class="keyword">int</span>[len + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> bid = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		bid = bucket(nums[i], len, min, max);</span><br><span class="line">		mins[bid] = hasNum[bid] ? Math.min(mins[bid], nums[i]) : nums[i];</span><br><span class="line">		maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], nums[i]) : nums[i];</span><br><span class="line">		hasNum[bid] = <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lastMax = maxs[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt;= len; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (hasNum[i]) &#123;</span><br><span class="line">			res = Math.max(res, mins[i] - lastMax);</span><br><span class="line">			lastMax = maxs[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bucket</span><span class="params">(<span class="keyword">long</span> num, <span class="keyword">long</span> len, <span class="keyword">long</span> min, <span class="keyword">long</span> max)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">int</span>) ((num - min) * len / (max - min));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>待写</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -521,8 +355,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -572,6 +415,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题1"><span class="nav-number">1.</span> <span class="nav-text">例题1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题2"><span class="nav-number">2.</span> <span class="nav-text">例题2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题3"><span class="nav-number">3.</span> <span class="nav-text">例题3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题4"><span class="nav-number">4.</span> <span class="nav-text">例题4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题5"><span class="nav-number">5.</span> <span class="nav-text">例题5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题6"><span class="nav-number">6.</span> <span class="nav-text">例题6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题7"><span class="nav-number">7.</span> <span class="nav-text">例题7</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -660,64 +520,6 @@
   
 
   
-    
-      
-    
-      
-        
-      
-    
-  
-    
-      
-<script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-    
-  
 
   
 
@@ -725,5 +527,8 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
 </body>
 </html>
